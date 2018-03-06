@@ -5,9 +5,9 @@ $(function(){
 		console.log("click", id)
 		console.log("click", newDevoured)
 		var eaten = {
-			devoured: true
+			devoured: newDevoured
 		};
-
+		console.log(eaten)
 		$.ajax("/api/burgers/" + id, {
 		  method:"PUT",
 		  data: eaten
@@ -18,7 +18,7 @@ $(function(){
 		  }
 		);
 	});
-	
+
 	$(".create-form").on("submit", function(event){
 		console.log("click")
 		event.preventDefault();
