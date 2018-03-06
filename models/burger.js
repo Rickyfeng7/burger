@@ -6,15 +6,16 @@ var burger = {
       cb(res);
     });
   },
-  create: function(name, condition, cb){
-  	orm.create("burger_data", name, condition, function(res){
-  		cb(res);
-  	});
+  // The variables cols and vals are arrays.
+  create: function(cols, vals, cb) {
+    orm.create("burger_data", cols, vals, function(res) {
+      cb(res);
+    });
   },
-  delete: function(condition, cb){
-  	orm.delete("burger_data", condition, function(res){
-  		cb(res);
-  	});
+  update: function(objColVals, condition, cb) {
+    orm.update("burger_data", objColVals, condition, function(res) {
+      cb(res);
+    });
   }
-};
+}
 module.exports = burger; 
